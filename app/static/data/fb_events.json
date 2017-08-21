@@ -1,0 +1,444 @@
+{
+  "comment": " This is a test",
+  "nodes": [
+    {
+      "nodeType": "guest",
+      "name": "Ray Bernard",
+      "id": "581688212220942"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Steve Wang",
+      "id": "1927712560830109"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Matyakubov Bahrom",
+      "id": "869240206569227"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Stavan Karia",
+      "id": "1836848096330932"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Bren Stephanie",
+      "id": "10213752241544727"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Ben Leff",
+      "id": "10209604071083009"
+    },
+    {
+      "nodeType": "guest",
+      "name": "G\u00fcney Can G\u00f6ko\u011flu",
+      "id": "10157687623258504"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Michael Thomas",
+      "id": "10155128498852983"
+    },
+    {
+      "nodeType": "guest",
+      "name": "H\u00e9ctor Fernando Restrepo G\u00e1lvez",
+      "id": "10155483531486163"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Mike Selender",
+      "id": "10155563171363563"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Linda Tvrdy",
+      "id": "10155605010689522"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Jennifer Webb",
+      "id": "271255433389917"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Rahul Sharma",
+      "id": "1607373485969044"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Sarthak Jain",
+      "id": "1800284620001821"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Bhavanishankar Bhat",
+      "id": "10207904757855968"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Anandamoy Chatterjee",
+      "id": "10212452420819144"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Johnny Chen",
+      "id": "10208778148276669"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Sanhita Mukherji",
+      "id": "10210279212117535"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Laura Zhang",
+      "id": "3782744127135"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Jessica Costanzo",
+      "id": "10159001639045018"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Rishabh Jain",
+      "id": "10154893015570954"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Antonia Hyman",
+      "id": "10156484955629307"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Yukino Kondo",
+      "id": "10155657238769380"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Vishwajeet Shelar",
+      "id": "1592459057472748"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Claire Ger",
+      "id": "10209857089133313"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Claire Saint-Donat",
+      "id": "10210603599991104"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Michael Buell",
+      "id": "10102653243974682"
+    },
+    {
+      "nodeType": "guest",
+      "name": "John Min",
+      "id": "832245226952907"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Daniel Lees",
+      "id": "10159357238095492"
+    },
+    {
+      "nodeType": "guest",
+      "name": "HonYin Kok",
+      "id": "10155030499308137"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Spencer Rosengarten",
+      "id": "10155573153612207"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Lindsay Richman",
+      "id": "10101068024747012"
+    },
+    {
+      "nodeType": "guest",
+      "name": "Priyanshi Singh",
+      "id": "10214038994231810"
+    },
+    [
+      {
+        "nodeType": "event",
+        "name": "1) Data Science in Practice: Import and Visualize Facebook data",
+        "id": "139767396627545"
+      },
+      {
+        "nodeType": "event",
+        "name": "2) Data Science in Practice: Import and Visualize Facebook Data",
+        "id": "261048631052676"
+      },
+      {
+        "nodeType": "event",
+        "name": "3) Data Science in Practice: Import and Visualize Facebook data",
+        "id": "862264087264231"
+      }
+    ]
+  ],
+  "edges": [
+    {
+      "rsvp": "unsure",
+      "target": "139767396627545",
+      "source": "10155657238769380"
+    },
+    {
+      "rsvp": "unsure",
+      "target": "139767396627545",
+      "source": "10156484955629307"
+    },
+    {
+      "rsvp": "unsure",
+      "target": "139767396627545",
+      "source": "10154893015570954"
+    },
+    {
+      "rsvp": "unsure",
+      "target": "139767396627545",
+      "source": "10159001639045018"
+    },
+    {
+      "rsvp": "unsure",
+      "target": "139767396627545",
+      "source": "3782744127135"
+    },
+    {
+      "rsvp": "unsure",
+      "target": "139767396627545",
+      "source": "10210279212117535"
+    },
+    {
+      "rsvp": "unsure",
+      "target": "139767396627545",
+      "source": "10208778148276669"
+    },
+    {
+      "rsvp": "unsure",
+      "target": "139767396627545",
+      "source": "10212452420819144"
+    },
+    {
+      "rsvp": "unsure",
+      "target": "139767396627545",
+      "source": "10207904757855968"
+    },
+    {
+      "rsvp": "unsure",
+      "target": "139767396627545",
+      "source": "1800284620001821"
+    },
+    {
+      "rsvp": "unsure",
+      "target": "139767396627545",
+      "source": "1607373485969044"
+    },
+    {
+      "rsvp": "unsure",
+      "target": "139767396627545",
+      "source": "271255433389917"
+    },
+    {
+      "rsvp": "attending",
+      "target": "139767396627545",
+      "source": "10155605010689522"
+    },
+    {
+      "rsvp": "attending",
+      "target": "139767396627545",
+      "source": "10155563171363563"
+    },
+    {
+      "rsvp": "attending",
+      "target": "139767396627545",
+      "source": "10155483531486163"
+    },
+    {
+      "rsvp": "attending",
+      "target": "139767396627545",
+      "source": "10155128498852983"
+    },
+    {
+      "rsvp": "attending",
+      "target": "139767396627545",
+      "source": "10157687623258504"
+    },
+    {
+      "rsvp": "attending",
+      "target": "139767396627545",
+      "source": "10209604071083009"
+    },
+    {
+      "rsvp": "attending",
+      "target": "139767396627545",
+      "source": "10213752241544727"
+    },
+    {
+      "rsvp": "attending",
+      "target": "139767396627545",
+      "source": "1836848096330932"
+    },
+    {
+      "rsvp": "attending",
+      "target": "139767396627545",
+      "source": "869240206569227"
+    },
+    {
+      "rsvp": "attending",
+      "target": "139767396627545",
+      "source": "1927712560830109"
+    },
+    {
+      "rsvp": "attending",
+      "target": "139767396627545",
+      "source": "581688212220942"
+    },
+    {
+      "rsvp": "unsure",
+      "target": "261048631052676",
+      "source": "10101068024747012"
+    },
+    {
+      "rsvp": "unsure",
+      "target": "261048631052676",
+      "source": "10155573153612207"
+    },
+    {
+      "rsvp": "unsure",
+      "target": "261048631052676",
+      "source": "10155030499308137"
+    },
+    {
+      "rsvp": "unsure",
+      "target": "261048631052676",
+      "source": "10154893015570954"
+    },
+    {
+      "rsvp": "unsure",
+      "target": "261048631052676",
+      "source": "10159357238095492"
+    },
+    {
+      "rsvp": "unsure",
+      "target": "261048631052676",
+      "source": "1836848096330932"
+    },
+    {
+      "rsvp": "unsure",
+      "target": "261048631052676",
+      "source": "1800284620001821"
+    },
+    {
+      "rsvp": "unsure",
+      "target": "261048631052676",
+      "source": "832245226952907"
+    },
+    {
+      "rsvp": "attending",
+      "target": "261048631052676",
+      "source": "10102653243974682"
+    },
+    {
+      "rsvp": "attending",
+      "target": "261048631052676",
+      "source": "10155605010689522"
+    },
+    {
+      "rsvp": "attending",
+      "target": "261048631052676",
+      "source": "10155128498852983"
+    },
+    {
+      "rsvp": "attending",
+      "target": "261048631052676",
+      "source": "10209604071083009"
+    },
+    {
+      "rsvp": "attending",
+      "target": "261048631052676",
+      "source": "10210603599991104"
+    },
+    {
+      "rsvp": "attending",
+      "target": "261048631052676",
+      "source": "10209857089133313"
+    },
+    {
+      "rsvp": "attending",
+      "target": "261048631052676",
+      "source": "1592459057472748"
+    },
+    {
+      "rsvp": "attending",
+      "target": "261048631052676",
+      "source": "581688212220942"
+    },
+    {
+      "rsvp": "unsure",
+      "target": "862264087264231",
+      "source": "10214038994231810"
+    },
+    {
+      "rsvp": "attending",
+      "target": "862264087264231",
+      "source": "10102653243974682"
+    },
+    {
+      "rsvp": "attending",
+      "target": "862264087264231",
+      "source": "10155605010689522"
+    },
+    {
+      "rsvp": "attending",
+      "target": "862264087264231",
+      "source": "10155563171363563"
+    },
+    {
+      "rsvp": "attending",
+      "target": "862264087264231",
+      "source": "10155128498852983"
+    },
+    {
+      "rsvp": "attending",
+      "target": "862264087264231",
+      "source": "10209604071083009"
+    },
+    {
+      "rsvp": "attending",
+      "target": "862264087264231",
+      "source": "10210603599991104"
+    },
+    {
+      "rsvp": "attending",
+      "target": "862264087264231",
+      "source": "1836848096330932"
+    },
+    {
+      "rsvp": "attending",
+      "target": "862264087264231",
+      "source": "1592459057472748"
+    },
+    {
+      "rsvp": "attending",
+      "target": "862264087264231",
+      "source": "869240206569227"
+    },
+    {
+      "rsvp": "attending",
+      "target": "862264087264231",
+      "source": "581688212220942"
+    },
+    {
+      "rsvp": "attending",
+      "target": "862264087264231",
+      "source": "271255433389917"
+    }
+  ]
+}

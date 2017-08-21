@@ -1,0 +1,231 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="alchemy" id="alchemy">
+        <div id="info">
+            <h3>Hello, {{ user['name'] }}.</h3>
+            <a href="/logout" id="logout">Log out</a>
+            <!-- Facebook Logout link -->
+            <script>
+                document.getElementById('logout').onclick = function () {
+                    FB.logout(function (response) {
+                    });
+                };
+            </script>
+            <div id="event_import">
+                <!-- Event Import Form -->
+                <form id="event_import_form" action="{{ url_for('importevent') }}" method="post">
+                    <label>Enter an event:<br>
+                        <input type="text" name="event_url"></label>
+                    <button type="submit" name="submit">Import</button>
+                    <p id="error"></p>
+                </form>
+            </div>
+            <div id="fb_pic"></div>
+            <h3 id="name"></h3>
+            <p id="properties"></p>
+            <p id="type"></p>
+            <p id="relationships"></p>
+        </div>
+    </div>
+
+{% endblock %}
+{% block pagescript %}
+    <script type="text/javascript">
+        var timeStamp = Math.floor(Date.now() / 1000),
+            dataSource = "/static/data/fb_events.json" + "?time=" + timeStamp,
+            windowWidth = window.innerWidth,
+            windowHeight = window.innerHeight,
+            // Alchemy configs
+            config = {
+                "backgroundColor": "#FFFFFF",
+                "dataSource": dataSource,
+                "nodeTypes": {"nodeType": ["guest", "event"]},
+                "nodeCaption": "name",
+                "forceLocked": false,
+                "directedEdges": true,
+                "alpha": 0.001,
+                "edgeArrowSize": 10,
+                graphHeight: function () {
+                    return (windowHeight * 0.95);
+                },
+                graphWidth: function () {
+                    return (windowWidth * 0.95);
+                },
+                "nodeStyle": {
+                    "guest": {
+                        "radius": 12,
+                        "borderWidth": 0,
+                        "color": "#90caf9",
+                        "selected": {
+                            "borderColor": "#CCC",
+                            "borderWidth": 6,
+                            "radius": 18,
+                            "opacity": 0.5
+                        },
+                        "highlighted": {
+                            "borderColor": "#90caf9",
+                            "borderWidth": 5
+                        }
+                    },
+                    "event": {
+                        "radius": 25,
+                        "borderWidth": 0,
+                        "color": "#fdd835",
+                        "selected": {
+                            "borderColor": "#CCC",
+                            "borderWidth": 6
+                        },
+                        "highlighted": {
+                            "borderColor": "#FFFFFF",
+                            "borderWidth": 5
+                        }
+                    }
+                },
+                "edgeCaption": "rsvp",
+                "edgeTypes": {"rsvp": ["not_replied", "unsure", "attending"]},
+                "edgeStyle": {
+                    "not_replied": {
+                        "width": 1,
+                        "color": "#CCCCCC",
+                        "opacity": 0.5,
+                        "selected": {
+                            "width": 3,
+                            "opacity": 1
+                        },
+                        "highlighted": {
+                            "color": "#BBBBBB",
+                            "width": 3,
+                            "opacity": 1
+                        }
+                    },
+                    "unsure": {
+                        "width": 2,
+                        "color": "#ffa726",
+                        "opacity": 0.5,
+                        "highlighted": {
+                            "width": 3,
+                            "opacity": 1
+                        },
+                        "selected": {
+                            "width": 5,
+                            "opacity": 1
+                        }
+                    },
+                    "attending": {
+                        "width": 2,
+                        "color": "#b2ff59",
+                        "opacity": 0.5,
+                        "highlighted": {
+                            "opacity": 1,
+                            "width": 3
+                        },
+                        "selected": {
+                            "opacity": 1,
+                            "width": 5
+                        }
+                    }
+                },
+                afterLoad: showinfo
+            };
+        // Initialize Alchemy
+        alchemy = new Alchemy(config);
+
+        function showinfo() {
+            var nameTxt = $('#name'),
+                propTxt = $('#properties'),
+                typeTxt = $('#type'),
+                relTxt = $('#relationships'),
+                fbPic = $('#fb_pic');
+
+            $('g.node').click(function () {
+                // Shows node's details in info box when node is clicked
+                var nodeID = $(this).prop('id').replace('node-', ''),
+                    node = alchemy.get.nodes(nodeID)[0], relationships = [];
+
+                if (!$(this).is('[data-featured]')) {
+                    $(this).attr('data-featured', true);
+                    nameTxt.html('<b>Node:</b> <a href="https://www.facebook.com/' + node._properties.id + '" target="_blank">' + node._properties.name + '</a>');
+                    propTxt.html('<b>ID:</b> ' + node._properties.id);
+                    typeTxt.html('<b>Type:</b> ' + node._properties.nodeType);
+                    fbPic.css({'background-image': 'url("https://graph.facebook.com/' + node._properties.id + '/picture?type=large&width")'});
+
+                    //  fetch node's adjacent edges and output in html in info box
+                    for (var edge = 0; edge < node._adjacentEdges.length; edge++) {
+                        var target = alchemy.get.nodes(node._adjacentEdges[edge]._properties.target)[0];
+                        var source = alchemy.get.nodes(node._adjacentEdges[edge]._properties.source)[0];
+                        if (source._properties.id === node._properties.id) {
+                            relationships.push(node._adjacentEdges[edge]._edgeType + ' &rarr; ' + target._properties.name);
+                        } else if (target._properties.id === node._properties.id) {
+                            relationships.push(node._adjacentEdges[edge]._edgeType + ' &larr; ' + source._properties.name);
+                        }
+                    }
+
+                    relationships = relationships.join(" <br>");
+                    relTxt.html('<b>Relationships: </b><p>' + relationships + '</p>');
+
+                    $('[data-featured]').not(this).trigger('click');
+
+                } else {
+                    $(this).removeAttr('data-featured');
+                    node._state = 'active';
+                    if ($(this).hasClass('guest')) {
+                        $(this).find('circle').attr('r', 12);
+                    }
+                    $(this).find('circle').css('stroke', '');
+                }
+                console.log(node);
+            });
+
+            $('g.edge').click(function () {
+                // Shows edge's details in info box when edge is clicked
+                var edgeID = $(this).prop('id').replace('edge-', ''),
+                    sourceID = edgeID.substr(0, edgeID.indexOf('-')),
+                    targetID = edgeID.substring(edgeID.indexOf('-') + 1, edgeID.lastIndexOf('-'));
+                var edge = alchemy.getEdges(sourceID, targetID)[0],
+                    sourceNode = alchemy.get.nodes(sourceID)[0],
+                    targetNode = alchemy.get.nodes(targetID)[0];
+
+                if (!$(this).is('[data-featured]')) {
+                    $(this).attr('data-featured', true);
+
+                    console.log(edge);
+                    nameTxt.html('<b>Edge:</b> ' + edge._properties.rsvp);
+                    propTxt.html('<b>Source:</b> ' + sourceNode._properties.nodeType + ' ' + sourceNode._properties.name);
+                    typeTxt.html('<b>Target:</b> ' + targetNode._properties.nodeType + ' ' + targetNode._properties.name);
+                    relTxt.html('');
+                    fbPic.css({'background-image': ''});
+
+                    $('[data-featured]').not(this).trigger('click');
+                } else {
+                    edge._state = 'active';
+                    $(this).removeAttr('data-featured');
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            var eventURL = $('[name="event_url"]'),
+                errorMsg = $('#error'),
+                submitBtn = $('[name="submit"]');
+            eventURL.focus(function () {
+                errorMsg.text('');
+            });
+            $('#event_import_form').submit(function (e) {
+                // validate the event import form
+                eventURLval = eventURL.val();
+                eventURLval = eventURLval.trim();
+                if (eventURLval.length && /^(https?:\/\/)?(www\.)?facebook.com\/events\/\d{15,}(\/)?/.test(eventURLval)) {
+                    var eventID = eventURLval.substring(eventURLval.lastIndexOf("events/") + 7, eventURLval.lastIndexOf('/'));
+                    eventURL.val(eventID);
+                    submitBtn.attr('disabled', true);
+
+                } else {
+                    e.preventDefault();
+                    errorMsg.text('Please enter a valid Facebook event');
+                    return false;
+                }
+            });
+        });
+    </script>
+{% endblock %}
