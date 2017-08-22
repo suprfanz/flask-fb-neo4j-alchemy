@@ -62,9 +62,9 @@ def main():
     graphjson = str(comment) + str(guest_nodes) + ', ' + str(event_node) + ',' + str(guest_edges)
 
     print(graphjson)
-	# put your file path to json data here
+    # put your file path to json data here
     with open(
-            "C:\\Users\\emjay\\Documents\\SuprFanz\\Dev\\alchemy\\app\\static\\data\\fb_events.json",
+            "C:\\Users\\yourname\\Documents\\path\\to\\alchemy\\app\\static\\data\\fb_events.json",
             "w") as f:
         f.write(graphjson)
     return graphjson
