@@ -1,3 +1,5 @@
+**Update: Given that Alchemy JS is currently unmaintained, this project is deprecated and no longer supported
+
 # SuprFanz.com Tutorial: Importing Data from Facebook into Neo4j for Alchemy Data Visualizaion Step by Step
 
 The purpose of this lab is connect to the Facebook API using python and import Event data into 
