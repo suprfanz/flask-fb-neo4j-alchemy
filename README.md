@@ -1,4 +1,4 @@
-**Update: Given that Alchemy JS is currently unmaintained, this project is deprecated and no longer supported
+**Update: Given that Alchemy JS is currently unmaintained, this project is deprecated and no longer supported**
 
 # SuprFanz.com Tutorial: Importing Data from Facebook into Neo4j for Alchemy Data Visualizaion Step by Step
 
